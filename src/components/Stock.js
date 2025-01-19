@@ -1,11 +1,18 @@
 import React from "react";
 
-function Stock({stock, onAddToPortfolio}) {
+function Stock({stock, onAddToPortfolio, onRemoveFromPortfolio}) {
 
   function handleClick(){
-
-    onAddToPortfolio(stock.id)
-
+    console.log(stock,"here")
+    if(`uniqueID` in stock){
+      console.log("called remove")
+      onRemoveFromPortfolio(stock.uniqueID)
+    }
+    else{
+      console.log("called add")
+      onAddToPortfolio(stock.id)
+    }
+    console.log(stock.uniqueID in stock);
   }
 
 
